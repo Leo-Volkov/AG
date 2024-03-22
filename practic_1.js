@@ -29,4 +29,5 @@ console.log("Задание 4:", cMagnitude * bMagnitude); // 8.717797887081348
 // задание 5
 // const scaledVector = c.map((x) => x * k);
 
-// console.log("k * c:", scaledVector); // [3.5, 0, 3.5]
+// console.log("k * c:", scaledVector); // [3.5, 0, 3.5]пукп
+console.log("Задание 5:", c.map((x) => x * k)); // [3.5, 0, 3.5]
