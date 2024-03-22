@@ -21,10 +21,9 @@ console.log("c * b:", dotProduct); // 8
 const cMagnitude = Math.sqrt(c.reduce((acc, x) => acc + x**2, 0));
 const bMagnitude = Math.sqrt(b.reduce((acc, x) => acc + x**2, 0));
 
-console.log("c * b:", cMagnitude*bMagnitude); // 68
+console.log("c * b:", cMagnitude * bMagnitude); // 8.717797887081348
 
 // задание 5
 const scaledVector = c.map((x) => x * k);
 
 console.log("k * c:", scaledVector); // [3.5, 0, 3.5]
-
