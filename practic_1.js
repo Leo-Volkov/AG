@@ -1,5 +1,6 @@
 const c = [1, 0, 1];
 const b = [-2, 3, 5];
+const k = 3.5;
 
 // задание 1
 const sum = c.map((x, i) => x + b[i]);
