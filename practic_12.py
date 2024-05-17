@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt
-x = [1, 2, 3, 4, 5]
-y = [25, 32, 34, 20, 25]
-plt.plot(x, y)
+import numpy as np
+x = np.linspace(-6, 6, 12)
+y = -4*x+2
+plt.plot(x, y, color='pink')
 plt.xlabel('Ось абцисс')
 plt.ylabel('Ось ординат')
 plt.title('График по точкам')
+plt.grid(True)
 plt.show()
