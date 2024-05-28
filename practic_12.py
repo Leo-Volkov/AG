@@ -1,33 +1,37 @@
-#иМПОРТИРУЕМ БИБЛИОТЕКИ
-import matplotlib.pyplot as plt
-import numpy as np 
-# x = np.linspace(-10, 10, 40)
-# y = -2/x
-# z = np.linspace(-10, 10, 2)
-# w = [0 , 0]
-# plt.plot(z,w, color='red')
-# plt.plot(w,z, color='red')
-# plt.plot(x, y, color='blue', marker='o', markersize=3)
-# plt.xlabel('Ось абцисс')
-# plt.ylabel('Ось ординат')
-# plt.title('График по точкам')
-# plt.grid(True)
-# plt.show()
+# Волков Лев, Бокун Алексей
 
-#задание 3
-import matplotlib.pyplot as plt
+# инпорт библеотек
+import matplotlib.pyplot as plt 
 import numpy as np
-angles = np.arange(0, 2*np.pi, np.pi/100)
-sine_values = np.cos(angles*4)
-cosine_values = np.cos(angles) *4
-fig, ax = plt.subplots()
 
-ax.plot(angles, sine_values, label="Косинус")
-ax.plot(angles, cosine_values, label="Косинус")
-ax.set_title("График косинусов")
-ax.set_xlabel("Радианы")
-ax.set_ylabel("Значение")
-ax.xaxis.set_major_formatter(lambda x, _: f"{x:.1f}π")
-plt.legend()
-plt.grid(True)
-plt.show()
+# Определение параметров функции
+
+a = int(input('Амплитуда sin-функции: '))  # Амплитуда sin-функции
+d = int(input('Амплитуда cos-функции: '))  # Амплитуда cos-функции
+c = int(input('Сдвиг sin-функции по оси x: '))  # Сдвиг sin-функции по оси x
+h = int(input('Сдвиг cos-функции по оси y: '))  # Сдвиг cos-функции по оси y
+f = int(input('Коэффициент при x в cos-функции: '))  # Коэффициент при x в cos-функции
+g = int(input('Коэффициент при x^2 в cos-функции: '))  # Коэффициент при x^2 в cos-функции
+
+# Определение диапазона значений x
+xmin = int(input('Минемальный диапазона значений x: '))
+xmax = int(input('Максимальный диапазона значений x: '))
+x = np.linspace(xmin, xmax, 500)  # Массив значений x
+
+# Вычисление значений y
+y = a*np.sin(d*x + c) - d*np.cos(g*x**2 + f*x + h)
+
+# Построение графика
+plt.plot(x, y, label='y=asin(dx+c)-dcos(gx^2+fx+h)')  # Линия графика
+plt.axhline(0, color='red', linestyle='--', label='y=0')  # Ось x
+plt.axvline(0, color='red', linestyle='--', label='x=0')  # Ось y
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('График функции y=asin(dx+c)-dcos(gx^2+fx+h)')
+plt.legend()  # Отображение легенды
+plt.grid(True)  # Сетка
+
+# Изменение цвета графика
+plt.plot(x, y, color='blue', label=f'y=asin(dx+c)-dcos(gx^2+fx+h)')  # Линия графика (синий цвет)
+
+plt.show()  # Отображение графика
